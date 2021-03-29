@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>表单2-代码题-2</title>
+</head>
+<body>
+    <form method="POST">
+        <div>
+            你的邮箱（必填）：
+            <input type="email" name="email" required/>
+        </div>
+        <div>
+            众所周知，十八只兔子有
+            <input type="number" name="number" max="100" min="0" step="2">
+            只脚。
+        </div>
+        <div>
+            请问拜登最喜欢的中国一线城市是：
+            <input id="mycity" list="cities"/>
+            <datalist id="cities">
+                <option value="北京"/>
+                <option value="上海"/>
+                <option value="广州"/>
+                <option value="深圳"/>
+
+            </datalist> 
+        </div>
+    </form>
+</body>
+</html>
