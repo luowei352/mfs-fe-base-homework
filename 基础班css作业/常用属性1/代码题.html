@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用属性1代码题</title>
+    <style>
+        a   {
+            display:block; width:200px; height:65px; line-height:65px; /*定义状态*/
+            text-indent:-2015px; /*隐藏文字*/
+            background-image:url(雪碧图按钮素材.png); /*定义背景图片*/
+            background-position:0 0; /*定义链接的普通状态，此时图像显示的是顶上的部分*/
+            }
+        a:hover {
+            background-position:0 -66px; /*定义链接的滑过状态，此时显示的为中间部分，向下取负值*/
+            }
+        a:active {
+            background-position:0 -132px; /*定义链接的普通状态，此时显示的是底部的部分，向下取负值*/
+            }
+    </style>
+</head>
+<body>
+    <a class="button" href="https://www.baidu.com" target="_blank">链接</a>
+</body>
+</html>
