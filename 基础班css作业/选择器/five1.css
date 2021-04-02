@@ -1,0 +1,6 @@
+#parent p.class1 {
+    color: red
+}
+div #child.class1 {
+    color: blue
+}

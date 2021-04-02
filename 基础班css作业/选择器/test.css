@@ -1,0 +1,21 @@
+* {
+    color: darkgoldenrod;
+}
+p {
+    color: hotpink;
+}
+*[title] {
+    color: teal;
+}
+p:nth-of-type(3) {
+    color: tan;
+}
+.class {
+    color: darksalmon;
+}
+#id {
+    color: fuchsia;
+}
+p:nth-last-of-type(1) {
+    color: greenyellow !important;;
+}
