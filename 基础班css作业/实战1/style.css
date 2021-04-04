@@ -1,0 +1,101 @@
+body{
+    margin: 0;
+}
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.header{
+
+}
+.header-main{
+    padding: 40px 0 20px 0;
+    background-image: url(https://www.golaravel.com/assets/images/header-bg.jpg);
+    background-origin:padding-box;
+    background-position-x:50%;
+    background-position-y:20%;
+}
+.header-main h1{
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    font-size: 42px;
+    margin-bottom: 45px;
+}
+.docs{
+    display: flex;
+    justify-content: center;
+}
+.btn-doc{
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgb(240, 56, 49);
+    padding: 7px 12px;
+    font-size: 14px;
+    margin: 2px;
+    border-radius: 2px;
+}
+.btn-doc:hover{
+    background-color: black;
+    border: black;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #e1e1e1;
+}
+.nav .link{
+    color: #505050;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 14px;
+}
+.main{
+    background-color: #ebebeb;
+    padding: 40px ;
+}
+.main-container{
+    display: flex;
+    justify-content: space-between;
+}
+.content{
+    height: 1000px;
+    background-color: yellow;
+    width: 67%;
+}
+.aside{
+    height: 500px;
+    width: 30%;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+.aside .widget{
+    background-color: white;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+.widget .title{
+    margin: 0;
+    font-weight: 400;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 7px;
+    position: relative;
+    font-size: 20px;
+}
+.widget .title:after{
+    content: " ";
+    display: block;
+    width: 100px;
+    border-bottom: 1px solid #f4645f;
+    position: absolute;
+    bottom: -1px;
+}
+.faq-link{
+    text-decoration: none;
+    color: #f4645f;
+}
+.footer{
+    height: 300px;
+    background-color: black;
+}
