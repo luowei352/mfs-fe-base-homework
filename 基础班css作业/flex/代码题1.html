@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            max-width: 1040px;
+            flex-direction: column;
+            height: 500px;/*此处可以定义页面整体的高度*/
+        }
+        .item{
+            display: flex;
+            text-align: center;
+        }
+        .lang-left{
+            width: 200px;
+            background-color: skyblue;
+            margin-right: 10px;
+        }
+        .lang-main{
+            background-color: slateblue;
+            flex-grow: 1;
+        }
+        .lang-right{
+            width: 200px;
+            background-color: skyblue;
+            margin-left: 10px;
+        }
+        .head,.foot,.lang-left,.lang-main,.lang-right{
+            justify-content: center;
+            align-items: center;
+        }
+        .head{
+            height: 50px;
+            background-color: gray;
+            margin: 5px;
+        }
+        .body{
+            margin: 5px;
+            flex-grow: 1;
+        }
+        .foot{
+            height: 50px;
+            background-color: gray;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item head">
+            <div class="item text">头部</div>
+        </div>
+        <div class="item body">
+            <div class="item lang-left">
+                <div class="item text">侧边栏1固定宽度</div>
+            </div>
+            <div class="item lang-main">
+                <div class="item text">主内容栏自适应宽度</div>
+            </div>
+            <div class="item lang-right">
+                <div class="item text">侧边栏1固定宽度</div>
+        </div>
+        </div>
+        <div class="item foot">
+            <div class="item text">底部</div>
+        </div>
+
+    </div>
+</body>
+</html>

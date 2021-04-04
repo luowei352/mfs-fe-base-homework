@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container,.item{
+            display: flex;
+        }
+        .container{
+            height: 250px;
+            width: 350px;
+            border:1px solid black;
+            border-radius: 25px;
+            flex-wrap: wrap;
+            justify-content:space-around;
+            align-content: space-around;
+        }
+        .dice{
+            border: 1px solid black;
+            border-radius: 25px;
+            height: 60px;
+            width: 60px;
+            padding: 20px;
+            background-color: blanchedalmond;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .point{
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            background-color: black;
+        }
+        .miss{
+            background-color: rgba(0,0,0,0);
+        }
+        .c1{
+            justify-content: flex-start;
+            align-items: center;
+            height: 20px;
+            width: 60px;
+        }
+        .c2{
+            justify-content: space-around;
+            align-items: center;
+            height: 20px;
+            width: 60px;
+        }
+        .c3{
+            justify-content: flex-end;
+            align-items: center;
+            height: 20px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item dice">
+            <div class="item c2">            
+                <div class="item point"></div>
+            </div>        
+        </div>
+        <div class="item dice">
+            <div class="item c2">            
+                <div class="item point"></div>
+                <div class="item point"></div>
+            </div>
+        </div>
+        <div class="item dice">
+            <div class="item c1">            
+                <div class="item point"></div>
+            </div>
+            <div class="item c2">            
+                <div class="item point"></div>
+            </div>
+            <div class="item c3">            
+                <div class="item point"></div>
+            </div>
+        </div>
+        <div class="item dice">
+            <div class="item c2">            
+                <div class="item point"></div>
+                <div class="item point miss"></div>
+                <div class="item point"></div>
+
+            </div>
+            <div class="item c2">            
+                <div class="item point miss"></div>
+                <div class="item point miss"></div>
+                <div class="item point miss"></div>
+            </div>
+            <div class="item c2">            
+                <div class="item point"></div>
+                <div class="item point miss"></div>
+                <div class="item point"></div>
+            </div>
+        </div>
+        <div class="item dice">
+            <div class="item c2">            
+                <div class="item point"></div>
+                <div class="item point miss"></div>
+                <div class="item point"></div>
+            </div>
+            <div class="item c2">            
+                <div class="item point"></div>
+            </div>
+            <div class="item c2">            
+                <div class="item point"></div>
+                <div class="item point miss"></div>
+                <div class="item point"></div>
+            </div>
+        </div>
+        <div class="item dice">
+            <div class="item c2">            
+                <div class="item point"></div>
+                <div class="item point "></div>
+                <div class="item point"></div>
+            </div>
+            <div class="item c2">            
+                <div class="item point miss"></div>
+            </div>
+            <div class="item c2">            
+                <div class="item point"></div>
+                <div class="item point "></div>
+                <div class="item point"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
