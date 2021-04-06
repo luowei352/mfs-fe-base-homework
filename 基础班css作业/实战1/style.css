@@ -59,9 +59,93 @@ body{
     justify-content: space-between;
 }
 .content{
-    height: 1000px;
-    background-color: yellow;
     width: 67%;
+}
+.post{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+.post>*{
+    display: flex;
+}
+.post-meta{
+    margin-bottom: 35px;
+}
+.post-meta>a{
+    text-decoration: none;
+    color: #f4645f;
+}
+.post-meta>span{
+    color: gray;
+}
+h2>a{
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    font-size: 30px;
+}
+a>img{
+    max-width: 100%;
+}
+.post-content{
+    font-size: 20px;
+}
+.post-content>p>a{
+    text-decoration: none;
+    color: #f4645f;
+
+}
+.post-permelink{
+    align-self: flex-start;
+}
+.post-footer{
+    align-self: stretch;
+    margin: 30px 0 10px;
+    border-bottom: 1px solid #ebebeb;
+}
+.btn-read{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f4645f;
+    border-radius: 2px;
+    background-color: #f4645f;
+    height: 35px;
+    width: 85px;;
+    text-decoration: none;
+    color: white;
+}
+.page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.number-page{
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f4645f;
+    border-radius: 2px;
+    background-color: #f4645f;
+    height: 35px;
+    width: 120px;
+    color: white;
+    margin-right: 10px;
+}
+.btn-page{
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f4645f;
+    border-radius: 2px;
+    background-color: #f4645f;
+    height: 35px;
+    width: 35px;;
+    text-decoration: none;
+    color: white;
 }
 .aside{
     height: 500px;
@@ -74,6 +158,10 @@ body{
     background-color: white;
     margin-bottom: 40px;
     padding: 20px;
+}
+.widget{
+    display: flex;
+    flex-direction: column;
 }
 .widget .title{
     margin: 0;
@@ -95,7 +183,119 @@ body{
     text-decoration: none;
     color: #f4645f;
 }
+.btn-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f4645f;
+    border-radius: 2px;
+    background-color: #f4645f;
+    height: 35px;
+    margin: 0 0 5px 0;
+    text-decoration: none;
+    color: white;
+}
 .footer{
-    height: 300px;
+    background-color: #202020;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+.footer-container{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    margin: 0;
+    max-width: 1180px;
+}
+.footer-box{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    width: 30%;
+}
+.footer-box h3{
+    display: flex;
+    color: white;
+    margin: 0;
+    font-weight: 400;
+    border-bottom: 1px solid #303030;
+    padding-bottom: 7px;
+    position: relative;
+    font-size: 20px;
+    position: relative;
+
+}
+.footer-box h3:after{
+    content: " ";
+    display: block;
+    width: 100px;
+    border-bottom: 1px solid #f4645f;
+    position: absolute;
+    bottom: -1px;
+}
+.footer-box *{
+    display: flex;
+    text-decoration: none;
+    font-size: 14px;
+}
+.news-box{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px dashed #303030;
+    padding-top: 18px;
+}
+.news-box>a{
+    color: #808080;
+}
+.news-box>p{
+    color: #505050;
+}
+.more{
+    display: flex;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #303030;
+    margin-top: 18px;
+    justify-content: center;
+    align-items: center;
+}
+.linkmore{
+    color: #808080;
+    text-decoration: none;
+}
+.friends-box{
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px dashed #303030;
+    padding: 14px 0px 18px;
+}
+.friends-link{
+    display: flex;
+    padding: 4px 7px;
+    margin: 7px 4px 0px 4px;
+    justify-content: center;
+    align-items: center;
+    color: #808080;
+}
+.friends-link:hover{
+    background-color: #f4645f;
+    color: white;
+}
+.friends-net{
+    display: flex;
+}
+.footer-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #505050;
+    height: 80px;
+    font-size: 13px;
+    border-top: 1px solid #303030;
     background-color: black;
+    width: 100%;
+
 }
