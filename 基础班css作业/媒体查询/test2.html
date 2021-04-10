@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>码蜂社前端作业20-2</title>
+    <style>
+        .conter{
+            background-color: #ffe502;  
+            max-width: 1040px;            
+            margin: 0 auto;            
+        }
+        .nav{                      
+            background-color: #ffe502;            
+            display: flex;
+            justify-content: left;
+        }
+        .link{
+            text-decoration: none;
+            margin: 3px 7px;
+        }
+        .fl{
+            float: left;
+        }
+        
+        li{
+            list-style: none;
+        }
+        .cls1{
+            position: relative;
+        }
+        .cls1:hover ul{
+            display: block;
+            height: 200px;
+            position: absolute;
+            top: 2px;
+            left: -40px;            
+        }
+        ul{
+            display: none;
+            list-style: none;
+        }
+        @media only screen and (max-width: 768px){
+            .nav{
+                display: flex;
+                background-color: #ffe502; 
+                justify-content: unset;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="conter">
+        <nav class="nav">
+            <div>
+                <a class="link fl" href="">菜鸟教程</a>
+            </div>
+            <div>
+                <a class="link fl" href="">iso</a>
+            </div>
+            <div>
+                <a href="" class="link fl">svn</a>
+            </div>
+            <div>
+                <span class="link fl cls1" >
+                    java
+                    <ul>
+                        <li>jmeter</li>
+                        <li>EJB</li>
+                        <li>Jasper Report</li>
+                    </ul>
+                </span>      
+            </div>             
+        </nav>
+    </div>
+</body>
+</html>

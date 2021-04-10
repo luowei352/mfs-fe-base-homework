@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>媒体查询代码题2</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        .container{
+            display: flex;
+            background-color: #EEEEEE;
+        }
+        .textbox{
+            display: flex;
+            padding: 15px;
+            flex-grow: 0;
+            height: 30px;
+            line-height: 30px;
+        }
+        .textbox:nth-child(2){
+            background-color: #CCCCCC;
+        }
+        @media screen and (max-width:768px){
+            .container{
+                flex-wrap: wrap;
+            }
+            .textbox{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="textbox">
+            菜鸟教程
+        </div>
+        <div class="textbox">
+            IOS
+        </div>
+        <div class="textbox">
+            SVN
+        </div>
+        <div class="textbox">
+            JAVA
+        </div>
+    </div>
+</body>
+</html>
