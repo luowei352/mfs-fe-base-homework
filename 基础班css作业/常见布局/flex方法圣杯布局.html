@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            margin: 0px;
+            flex-wrap: wrap;
+        }
+        div{
+            display: flex;
+        }
+        #header{
+            width: 100%;
+            background-color: darkcyan;
+        }
+        #footer{
+            width: 100%;
+            background-color: darkcyan;
+        }
+        #content{
+            width: 100%;
+        }
+        .main{
+            flex-grow: 1;
+            background-color: cornflowerblue;
+        }
+        .left{
+            flex-grow: 0;
+            order: -1;
+            width: 150px;
+            background-color: cyan;
+        }
+        .right{
+            flex-grow: 0;
+            width: 250px;
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        header
+    </div>
+    <div id="content">
+        <div class="main">
+            main
+        </div>
+        <div class="left">
+            left
+        </div>
+        <div class="right">
+            right
+        </div>
+    </div>
+    <div id="footer">
+        footer
+    </div>
+</body>
+</html>
