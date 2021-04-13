@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var b="a.b.c.d";
+        function lastName(name){
+            var a=name.split(".");
+            return a[a.length-1];
+        }
+        function getSuffix(file){
+            return file.slice(file.lastIndexOf(".") + 1); 
+        }
+        console.log(lastName(b));
+        console.log(getSuffix(b));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

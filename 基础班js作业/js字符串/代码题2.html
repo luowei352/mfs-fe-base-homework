@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str="luke, i'm your father. ";
+        var block=str.split(" ");//预处理，将文本按空格分割
+        for (var i=0;i<block.length;i++){
+            var small=block[i];//取出分割以后的某段文本
+            var small=small.slice(0,1);//取出某段文本的第一个字母
+            var big=small.toUpperCase();//将这个字母转换成大写
+            block[i]=block[i].replace(small,big);//用大写字母替换原字母
+        }
+        str=block.join(" ");
+        console.log(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
