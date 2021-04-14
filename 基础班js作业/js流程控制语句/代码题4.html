@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr=[4, 5, 0, 1];
+        for (x in arr){
+            y=arr[x];
+            switch(y){
+                case 0:
+                    arr[x]="星期日";
+                break;
+                case 1:
+                    arr[x]="星期一";
+                    break;
+                case 2:
+                    arr[x]="星期二";
+                    break;
+                case 3:
+                    arr[x]="星期三"
+                    break;
+                case 4:
+                    arr[x]="星期四";
+                    break;
+                case 5:
+                    arr[x]="星期五";
+                    break;
+                case 6:
+                    arr[x]="星期六";
+                    break;
+            }
+        }
+        console.log(arr)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
