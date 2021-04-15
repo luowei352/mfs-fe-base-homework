@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        现象：出现Uncaught Error: An error错误
+        分析：setTimeout(代码段或者函数,时间)这个用法是回调的。
+        也就是说，js引擎在遇到setTimeout()的时候，会继续往下执行遇到的代码
+        直到经过了定义的时间以后，才会回调执行传入参数中的那个代码段或者函数。
+        显然，在原代码中，catch代码段顺序执行，其执行时间出现在定时一秒后才执行的throw之前。
+        因此这个catch无法接收到throw的异常抛出。
+        也就是说，诸如此类的的try-catch组织方式是捕获不了回调函数的，try-catch仅仅在单一执行环境中奏效。
+        解决方式：将try-throw放在同一执行环境，也即在包裹着原先的throw的函数中。
+        */
+        function asyncTask(){
+                setTimeout(
+                    function(){
+                        try{
+                            throw new Error("An error");
+                        }
+                        catch(err){
+                            console.log(err)                        }
+                    }
+                    ,1000)
+        }
+        asyncTask()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
