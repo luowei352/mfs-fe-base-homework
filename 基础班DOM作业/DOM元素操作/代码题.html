@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list"></ul>
+    <script>
+        var li1=document.createElement("li");
+        var text1 = document.createTextNode("1");
+        li1.appendChild(text1);
+        var li2=document.createElement("li");
+        var text2 = document.createTextNode("2");
+        li2.appendChild(text2);
+        var inPut=document.getElementById("list");
+        inPut.appendChild(li1);
+        inPut.appendChild(li2);
+    </script>
+</body>
+</html>
