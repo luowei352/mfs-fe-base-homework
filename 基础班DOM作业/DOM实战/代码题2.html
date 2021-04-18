@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+        .body{
+            margin: 0%;
+        }
+        .banner{
+            background: url(https://work.mafengshe.com/static/imgs/banner.jpg);
+            height: 270px;
+        }
+        .list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .item{
+            width: 22%;
+            height: 148px;
+            background-color: #4ce19c;
+            margin: 20px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .item .number{
+            background-color: #20b6d2;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            line-height: 70px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+        }
+        .item .title{
+            background-color: #00474c;
+            position: absolute;
+            bottom: 0%;
+            height: 45px;
+            left: 0%;
+            right: 0%;
+            text-align: center;
+            line-height: 45px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+        .item .info{
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            color: #ffffff;
+        }
+        .item .xiaolian{
+            font-size: 60px;
+            position: absolute;
+            left: 0%;
+            right: 0%;
+            bottom: 0%;
+            top: -20%;
+            margin: auto;
+            height: 60px;
+            width: 60px;
+        }
+        .pager{
+            text-align: center;
+        }
+        .pager div{
+            display: inline-block;
+            margin: 5px;
+            height: 30px;
+            width: 30px;
+            background-color: palevioletred;
+            border-radius: 4px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"></div>
+    <div class="list" id="list"></div>
+
+    <div class="pager" id="pager">
+        <!--
+        <a href="#">1</a>
+        <a href="#">2</a>
+        -->
+    </div>
+
+    <script>
+        //构造item的函数
+        function createItem(no,title,clickTimes,replyTimes){
+            var dom = document.createElement("div");
+            dom.setAttribute("class","item");
+
+            var html = '<div class="number">' + no + '</div>' +
+            '<div class="title">' + title + '</div>' +
+            '<div class="info">' +
+                '<span class="icon iconfont icon-yj">' + ' ' + clickTimes + ' ' + '</span>' +
+                '<span class="icon iconfont icon-huifu">' + ' ' + replyTimes + ' ' + '</span>' +
+            '</div>' +
+            '<div class="icon iconfont icon-xiaolian xiaolian"></div>'
+
+            dom.innerHTML = html;
+
+            return dom;
+        }
+
+        //定义item数量
+        var itemNumber = 100;
+        
+        //动态生成item数据和a数据
+        var data = [];
+        var aNumber = itemNumber/12 + 1;
+
+        for(var i = 1; i <= itemNumber; i++){
+            data.push({no:i, title:"标题"+i, clickTimes:10*i, replyTimes: 2+i})
+        }
+
+        var oPager = document.getElementById("pager");
+        for(var i = 1; i <= aNumber; i++){
+            var newDiv = document.createElement("div");
+            var newA = document.createElement("a");
+            var pageNumber = document.createTextNode(i);
+            newA.appendChild(pageNumber);
+            newDiv.appendChild(newA);
+            oPager.appendChild(newDiv);
+        }
+
+        //根据页码page来动态获取page对应的item
+        function getData(page){
+            return data.slice(page*12, page*12+12);
+        }
+
+        var oList = document.getElementById("list");
+
+        function fillDom(page){
+            //清除所有子节点
+            while(oList.hasChildNodes()){
+                oList.removeChild(oList.lastChild)
+            }
+            //使用了map函数，forEach函数来完成添加item
+            var data = getData(page);
+            var doms = data.map(
+                function(i){
+                    return createItem(i.no, i.title, i.clickTimes, i.replyTimes)
+                }
+            )
+            doms.forEach(
+                function(i){
+                    oList.appendChild(i);
+                }
+            )
+        }
+
+        //默认第一页
+        fillDom(0);
+
+        //取出翻页的a元素
+        var pages = document.querySelectorAll(".pager div");
+
+        //使用for循环给每个a元素绑定click事件
+        for(let i = 0; i< pages.length; i++){
+            pages[i].addEventListener("click",function(){
+                fillDom(i);
+            })
+        }
+    </script>
+</body>
+</html>
