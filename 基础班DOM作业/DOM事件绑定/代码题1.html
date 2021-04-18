@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tabs{
+            display: flex;
+        }
+        .tabs .tab{
+            margin: 0 10px;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab">tab1</div>
+        <div class="tab">tab2</div>
+    </div>
+    <div class="content">
+        <div>tab1's content</div>
+        <div>tab2's content</div>
+    </div>
+    <script>
+        var tabs = document.getElementsByClassName("tab");
+        var divs = document.querySelectorAll(".content div")
+        for(var i = 0 ;i < tabs.length; i++){
+            (function(i){
+                tabs[i].onclick = function(){
+                    for (var j = 0; j < divs.length; j++){
+                        divs[j].className = "hidden";
+                    }
+                    divs[i].className = ""
+                }
+            })(i)
+
+        for(var j = 0 ;j < tabs.length; j++){
+            divs[j].className="hidden";
+        }
+        }
+    </script>
+</body>
+</html>

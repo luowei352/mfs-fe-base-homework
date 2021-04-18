@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="award">点击“开始“按钮，开始抽奖！</div>
+    <div class="action">
+        <button id="start">开 始</button>
+        <button id="stop">停 止</button>
+    </div>
+    <script>
+        var award = document.getElementById("award");
+        var start = document.getElementById('start');
+        var stop = document.getElementById('stop');
+        var myVar;
+        start.addEventListener("click", function() {
+            myVar = setInterval(() => {
+                var b = Math.random() * 100;
+                var s = "";
+                console.log(b);
+                if (b < 1) {
+                    s = "特等奖"
+                } 
+                else if (b < 11) {
+                    s = "一等奖"
+                } 
+                else if (b < 41) {
+                    s = "二等奖"
+                } 
+                else if (b < 81) {
+                    s = "三等奖"
+                } 
+                else {
+                    s = "鼓励奖"
+                }
+                award.innerHTML = s
+            }, 100);
+
+        })
+        stop.addEventListener("click", function() {
+            clearInterval(myVar);
+        })
+    </script>
+</body>
+
+</html>
