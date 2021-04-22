@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/someaction" method="post" enctype="multipart/form-data">
+        输入x：<input type="number" id="xValue">
+        输入y：<input type="number" id="yValue">
+        <input type="button" id="jisuan" name="jisuan" value="计算" />
+    </form>    
+    <script>
+        function isInCircle(){
+            var x = document.getElementById("xValue").value
+            var y = document.getElementById("yValue").value
+            console.log("P点坐标为("+x+","+y+")")
+            if (Math.sqrt(x^2+y^2) <=1)
+                console.log("true")
+            else
+                console.log("false")
+        }
+        document.getElementById("jisuan").addEventListener("click",isInCircle)
+    </script>
+</body>
+</html>

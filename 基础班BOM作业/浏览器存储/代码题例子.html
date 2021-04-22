@@ -1,13 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
 </head>
+
 <body>
-    <div class="goods">
+    <div class="shangping">
         <div class="item"><button>0</button></div>
         <div class="item"><button>1</button></div>
         <div class="item"><button>2</button></div>
@@ -19,32 +21,28 @@
         <div class="item"><button>8</button></div>
         <div class="item"><button>9</button></div>
     </div>
-
     <div id="gouwuche"></div>
-
     <script>
-        var btns = document.querySelectorAll("button");
-        var oGouwuche = document.getElementById("gouwuche")
-        //为解决闭包问题把var换成let
-        for(let i = 0;i < btns.length; i++){
-            btns[i].addEventListener("click",function(){
-                oGouwuche.innerHTML = oGouwuche.innerHTML + btns[i].innerHTML
-                document.cookie = "buy = "+ oGouwuche.innerHTML
+        var btns = document.querySelectorAll(".shangping .item button");
+
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var oGouwuche = document.getElementById("gouwuche");
+                oGouwuche.innerText = oGouwuche.innerText + btns[i].innerText;
+                document.cookie = "buy=" + oGouwuche.innerText;
             })
-        }
 
-        var buyStorage = document.cookie.split("; ").map(function(i){
+        }
+        
+        var buyStorage = document.cookie.split(":").map(function (i) {
             return i.split("=")
-        }).filter(function(i){
-            return i[0] == "buy"
+        }).filter(function (i) {
+            return i[0] = "buy"
         })
-
-        if(buyStorage.length == 1){
-            oGouwuche.innerHTML = buyStorage[0][1]
+        if (buyStorage == 1) {
+            oGouwuche.innerText = buyStorage[0][1]
         }
-
-
     </script>
-
 </body>
+
 </html>

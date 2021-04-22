@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkPassword (str) {
+            var regExp = /^[a-zA-Z_][a-zA-Z0-9_]{5,15}$/
+            if(str.match(regExp)){
+                var i = 0;
+                if(/[a-z]/.test(str))
+                    i++;
+                if(/[A-Z]/.test(str))
+                    i++;
+                if(/[0-9]/.test(str))
+                    i++;
+                if(/[_]/.test(str))
+                    i++;
+                    console.log(i);
+                if(i >= 3){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        var str = "LuoWei123";
+        console.log(checkPassword (str));
+    </script>
+</body>
+</html>
