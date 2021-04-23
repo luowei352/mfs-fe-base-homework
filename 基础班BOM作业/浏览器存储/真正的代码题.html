@@ -10,7 +10,8 @@
     <div class="goods">商品1<button class="add" onclick="buy(1)">加入购物车</button><button class="move" onclick="deletegood(1)">从购物车中减少</button></div>
     <div class="goods">商品2<button class="add" onclick="buy(2)">加入购物车</button><button class="move" onclick="deletegood(2)">从购物车中减少</button></div>
     <div class="goods">商品3<button class="add" onclick="buy(3)">加入购物车</button><button class="move" onclick="deletegood(3)">从购物车中减少</button></div>
-    <div id="basket"><button onclick="clearbasket()">清空购物车</button></div>
+    <button onclick="clearbasket()">清空购物车</button>
+    <div id="basket"></div>
     <script>
         function buy(num){
             var goodnum = '商品'+num;//num是传入的商品序号
@@ -22,6 +23,7 @@
                 localStorage.setItem(goodnum, 1);//如果商品不在购物车内，直接新建商品数量为1
             }
             console.log(localStorage);
+            lookbasket();
         }
         function deletegood(num){
             var goodnum = '商品'+num;//num是传入的商品序号
@@ -36,11 +38,44 @@
                 console.log("没得删！怎么想都没得删吧！");//没东西删，返回报错
             }
             console.log(localStorage);
+            lookbasket();
         }
+
         function clearbasket(){
             localStorage.clear();
             console.log(localStorage);
+            lookbasket();
         }
+
+        function lookbasket(){
+            var basket = document.getElementById("basket");
+            str = JSON.stringify(printbasketgoods());
+            //var newDiv = document.createElement("div");
+            var newContent = document.createTextNode(str);
+            console.log(str);
+            var basket = document.getElementById("basket"); 
+            var childs = basket.childNodes; 
+            for(var i = 0; i < childs.length; i++) { 
+                basket.removeChild(childs[i]); 
+            }
+            basket.appendChild(newContent);
+        }
+
+        function printbasketgoods(){
+            var n = 3;//n是货架上货物总数
+            var shangpin = "商品";
+            var shuliang = "数量";
+            var goodslist = {};
+            for(var i = 1;i <= n;i++){
+                var goodname = shangpin + i;
+                var printname = goodname + shuliang;
+                if (localStorage.getItem(goodname))
+                    goodslist[printname] = localStorage.getItem(goodname);
+            }
+            console.log(goodslist);
+            return goodslist;
+        }
+        
     </script>
 </body>
 </html>
