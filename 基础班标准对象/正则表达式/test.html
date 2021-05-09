@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var kekinNumber = 0;
+        var kekinMoney = 0;
+        var zanNumber = 50;
+        function gacha(){
+            var a = 0;
+            for(var i=1;i<=100;i++){
+                if (i<=50){
+                    var p = 2;
+                }
+                else {
+                    var p = (i - 50)*2 + 2;
+                }
+                var ga = 100 * Math.random();
+                if (ga < p){
+                    a = i;
+                    break;
+                }
+            }
+            console.log("本次出黄所用抽数：" + a);
+            return a;
+        }
+
+        function getKekinNumber(times,baipiaoNumber){
+            for(var i = 1; i <= times; i++){
+                var chuhuoNumber = 0;
+                while(1){
+                    chuhuoNumber = chuhuoNumber + gacha()
+                    var wai = Math.random();
+                    if(wai < 0.5){
+                        console.log("歪了，继续抽");
+                    }
+                    else{
+                        console.log("没歪，出货了");
+                        break;
+                    }
+                }
+                if (chuhuoNumber > zanNumber){
+                    kekinNumber = kekinNumber + chuhuoNumber - zanNumber;
+                    zanNumber = baipiaoNumber;
+                }
+                else {
+                    zanNumber = zanNumber - chuhuoNumber + baipiaoNumber;
+                }
+                console.log("本次出货抽数：" + chuhuoNumber);
+                console.log("下次抽卡前库存抽数：" + zanNumber);                
+            }
+            console.log("总氪金抽数：" + kekinNumber);
+            kekinMoney = kekinNumber / 50 * 648;
+            console.log("氪金金额：" + kekinMoney);
+            console.log("----------分割线----------");
+
+        }
+
+        function getManyKekinNumber(qiannengNumber, chiziNumber, baipiaoNumber){
+            for(var i = 0; i<chiziNumber; i++){
+                var choujige = qiannengNumber + 1;
+                getKekinNumber(choujige, baipiaoNumber);
+            }
+        }
+
+    </script>
+</body>
+</html>
