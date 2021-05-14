@@ -7,14 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="pager" id="pager">
-        <!--
-        <a href="#">1</a>
-        <a href="#">2</a>
-        -->
-    </div>
     <script>
-        document.domain = 'luowei.com'
+    function mySetInterval(fun,millisec){
+        setTimeout(function(){
+            fun();
+            mySetInterval(fun,millisec)
+        },millisec);
+    }
+    //不同之处在于，系统带的SetInterval会自动修正时间，自行写的则不会
     </script>
 </body>
 </html>

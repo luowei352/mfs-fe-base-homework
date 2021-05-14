@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(year){
+            var student;
+            if (year == 1){
+                student = new One();
+                console.log(1);
+            }
+            if (year == 2){
+                student = new Two();
+                console.log(2);
+            }
+            if (year == 3){
+                student = new Three();
+                console.log(3);
+            }
+            if (year == 4){
+                student = new Four();
+                console.log(4);
+            }
+
+            student.speak = function(){
+                console.log('在重庆大学，'+this.year+'年级学生说听不见就是听不见!')
+            }
+            
+            return student;
+        }
+
+
+        function One(){
+            this.year = '一'
+        }
+        function Two(){
+            this.year = '二'
+        }        
+        function Three(){
+            this.year = '三'
+        }        
+        function Four(){
+            this.year = '四'
+        }
+
+
+        var one = Student(1);
+        var two = Student(2);
+        var three = Student(3);
+        var four = Student(4);
+
+        
+        one.speak();
+        two.speak();
+        three.speak();
+        four.speak();
+    </script>
+</body>
+</html>

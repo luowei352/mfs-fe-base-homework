@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function creat(proto) {
+            function F() {};
+            F.prototype = proto;
+            F.prototype.constructor = proto.constructor;
+            return new F();
+        }
+        function Sup(){
+            this.father = 1;
+            this.mother = 2;
+        }
+        Sup.prototype.howManyFather = function(){
+            console.log(this.father);
+            return this.father;
+        }
+        function Sub(childname){
+            this.childname = childname;
+        }
+        Sub.prototype = creat(Sup.prototype);
+        //console.log(Sub.prototype);
+        //Sub.prototype = Object.create(Sup.prototype);
+        //Sub.prototype.__proto__ = Sup.prototype;
+        console.log(Sup.prototype)
+        console.log(Sub.prototype);
+
+
+
+    </script>
+</body>
+</html>

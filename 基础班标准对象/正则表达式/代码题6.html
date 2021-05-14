@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function addClass(el, clas){
+        var reg = new RegExp("(^|\\s)" + clas + "(\\s|$)"),
+            trim = /^\s+|\s+$/g,
+            classStr = el.className;
+
+        classStr = classStr.replace(trim, "");
+        el.className = reg.test(classStr) ? classStr : classStr ? classStr + " " + clas : clas;
+    }
+
+    function removeClass(el, clas){
+        var reg = new RegExp("(?:^|\\s+)" + clas + "(?=\\s+|$)", "g"),
+            trim = /^\s+|\s+$/g,
+            classStr = el.className;
+
+        classStr = classStr.replace(reg, "");
+        el.className = classStr.replace(trim, "");
+    }
+    </script>
+</body>
+</html>

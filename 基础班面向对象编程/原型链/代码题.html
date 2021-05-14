@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Animal(){};
+        Animal.prototype.eat = function(){
+            return 'EAT!'
+        }
+        Animal.prototype.sleep = function(){
+            return 'SLEEP!'
+        }
+
+        function Beast(){};
+        Beast.prototype = Object.create(Animal.prototype);
+        Beast.prototype.bark = function(){
+            return 'BARK!'
+        }
+
+        function Dog(){};
+        Dog.prototype = Object.create(Beast.prototype);
+
+        function Cat(){};
+        Cat.prototype = Object.create(Beast.prototype);
+
+        function Human(){};
+        Human.prototype = Object.create(Animal.prototype);
+        Human.prototype.speak = function(){
+            return 'SPEAK!'
+        }
+    </script>
+</body>
+</html>
