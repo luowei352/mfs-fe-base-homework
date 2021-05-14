@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInfo</span><span class="hljs-params">(html)</span> </span>{
+        <span class="hljs-keyword">var</span> titleList = [];
+        <span class="hljs-keyword">var</span> teacherList = [];
+        <span class="hljs-keyword">var</span> timeList = [];
+        <span class="hljs-keyword">var</span> titleReg = /&lt;h4.*<span class="hljs-meta">?&gt;</span>(.*?)&lt;\/h4&gt;/;
+        <span class="hljs-keyword">var</span> teacherReg = /导师：&lt;!\-\-.*<span class="hljs-meta">?&gt;</span>&lt;!\-\-.*<span class="hljs-meta">?&gt;</span>(.*?)&lt;!\-\-.*<span class="hljs-meta">?&gt;</span>/;
+        <span class="hljs-keyword">var</span> timeReg = /时长：&lt;!\-\-.*<span class="hljs-meta">?&gt;</span>&lt;!\-\-.*<span class="hljs-meta">?&gt;</span>(.*?)&lt;!\-\-.*<span class="hljs-meta">?&gt;</span>/;
+        <span class="hljs-keyword">var</span> htmlList = html.split(<span class="hljs-string">'&lt;/div&gt;'</span>);
+        <span class="hljs-keyword">var</span> outputList = [];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; htmlList.length; i++) {
+            <span class="hljs-keyword">if</span> (htmlList[i].match(titleReg)) {
+                titleList[titleList.length] = htmlList[i].match(titleReg)[<span class="hljs-number">1</span>];
+            }
+            <span class="hljs-keyword">if</span> (htmlList[i].match(teacherReg)) {
+                teacherList[teacherList.length] = htmlList[i].match(teacherReg)[<span class="hljs-number">1</span>];
+            }
+            <span class="hljs-keyword">if</span> (htmlList[i].match(timeReg)) {
+                timeList[timeList.length] = htmlList[i].match(timeReg)[<span class="hljs-number">1</span>];
+            }
+        }
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; titleList.length; i++) {
+            <span class="hljs-keyword">var</span> infoObj = <span class="hljs-keyword">new</span> Object();
+            infoObj.title = titleList[i];
+            infoObj.teacher = teacherList[i];
+            infoObj.time = timeList[i];
+            outputList[outputList.length] = infoObj;
+        }
+        <span class="hljs-keyword">return</span> outputList;
+    }
+
+
+    function getInfo(html) { 
+        var titleList = []; 
+        var teacherList = []; 
+        var timeList = []; 
+        var titleReg = /<h4.*?>(.*?)<\/h4>/; 
+        var teacherReg = /导师：<!\-\-.*?><!\-\-.*?>(.*?)<!\-\-.*?>/; 
+        var timeReg = /时长：<!\-\-.*?><!\-\-.*?>(.*?)<!\-\-.*?>/; 
+        var htmlList = html.split('</div>'); 
+        var outputList = []; 
+        for (var i = 0; i < htmlList.length; i++) { 
+            if (htmlList[i].match(titleReg)) { 
+                titleList[titleList.length] = htmlList[i].match(titleReg)[1]; 
+            } 
+            if (htmlList[i].match(teacherReg)) { 
+                teacherList[teacherList.length] = htmlList[i].match(teacherReg)[1]; 
+            } 
+            if (htmlList[i].match(timeReg)) { 
+                timeList[timeList.length] = htmlList[i].match(timeReg)[1]; 
+            } 
+        } 
+        for (var i = 0; i < titleList.length; i++) { 
+            var infoObj = new Object(); 
+            infoObj.title = titleList[i]; 
+            infoObj.teacher = teacherList[i]; 
+            infoObj.time = timeList[i]; 
+            outputList[outputList.length] = infoObj; 
+        } 
+        return outputList; 
+    }
+</code>
+</body>
+</html>
